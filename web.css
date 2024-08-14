@@ -1,0 +1,199 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('https://humanidades.com/wp-content/uploads/2018/10/lluvia-3-e1581819535291.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+.contenedor {
+    display: flex;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.barra-lateral {
+    width: 250px;
+    background-color: #34495e;
+    color: white;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+    border-radius: 15px;
+}
+
+.barra-lateral h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #2980b9;
+    padding-bottom: 10px;
+}
+
+.barra-lateral label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.barra-lateral input[type="range"] {
+    width: 100%;
+    margin-bottom: 20px;
+    accent-color: #2980b9;
+}
+
+.barra-lateral button {
+    background-color: #1abc9c;
+    border: none;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+    font-size: 1.2em;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.barra-lateral button:hover {
+    background-color: #16a085;
+}
+
+.contenido-principal {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(44, 62, 80, 0.8);
+    color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+header input[type="range"] {
+    width: 300px;
+    accent-color: #2980b9;
+}
+
+.contenedor-mapa {
+    flex: 1;
+    background-color: rgba(44, 62, 80, 0.8);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+#mapaRadar {
+    width: 80%;
+    height: 80%;
+    background-color: #7f8c8d;
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+}
+
+.detalles {
+    padding: 20px;
+    background-color: rgba(52, 73, 94, 0.8);
+    border-radius: 15px;
+    margin-top: 20px;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.detalles h2 {
+    font-size: 1.8em;
+    border-bottom: 2px solid #2980b9;
+    padding-bottom: 10px;
+}
+
+.detalles p {
+    margin: 10px 0;
+}
+
+.detalles button {
+    background-color: #1abc9c;
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1.2em;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.detalles button:hover {
+    background-color: #16a085;
+}
+
+.galeria-imagenes {
+    margin-top: 20px;
+    background-color: rgba(44, 62, 80, 0.8);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.galeria-imagenes h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #2980b9;
+    padding-bottom: 10px;
+}
+
+.dia {
+    margin-bottom: 20px;
+}
+
+.dia h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #7f8c8d;
+    padding-bottom: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.imagenes {
+    display: flex;
+    gap: 10px;
+}
+
+.imagenes img {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.imagenes img:hover {
+    transform: scale(1.1);
+}
+
+.icono {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
