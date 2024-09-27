@@ -1,0 +1,48 @@
+/* Círculo de carga alrededor del logo */
+.loader-container {
+  position: relative;
+  width: 128px;
+  height: 128px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader-circle {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 5px solid rgba(0, 115, 184, 0.2); /* Círculo semitransparente */
+  border-top: 5px solid #0073B8; /* Parte visible del círculo */
+  border-radius: 50%;
+  animation: spin 2s linear infinite; /* Animación de rotación */
+  z-index: 0;
+}
+
+.loader-container img {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  z-index: 1; /* Coloca el logo sobre el círculo */
+}
+
+/* Animación de giro */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Gradiente en el texto de AlphaNova */
+.text-gradient {
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(180deg, #0073B8 0%, #003352 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+

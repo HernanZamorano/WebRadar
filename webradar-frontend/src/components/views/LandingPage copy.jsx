@@ -1,9 +1,8 @@
-import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom"; // Importa useNavigate
-import LoadingScreen from "./LoadingScreen"; // Importa la pantalla de carga
-import AOS from "aos"; // Importa AOS
-import "aos/dist/aos.css"; // Importa los estilos de AOS
-import { Carousel } from "antd"; // Importa el carrusel de Ant Design
+import React from 'react';
+import { useNavigate } from 'react-router-dom'; // Importa useNavigate
+import LoadingScreen from './LoadingScreen'; // Importa la pantalla de carg
+import { useState, useEffect } from 'react';
+
 
 function LandingPage() {
   const [loading, setLoading] = useState(true);
@@ -13,54 +12,45 @@ function LandingPage() {
     // Simula el tiempo de carga antes de mostrar el contenido
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 700); // Ajusta el tiempo de la pantalla de carga según lo necesario
-
-    // Inicializa AOS
-    AOS.init({
-      duration: 1000, // Duración de la animación
-      delay: 200, // Retraso
-    });
+    }, 000); // Ajusta el tiempo de la pantalla de carga según lo necesario
 
     return () => clearTimeout(timer);
   }, []);
 
-  if (loading) {
-    // Muestra la pantalla de carga mientras `loading` sea true
-    return <LoadingScreen />;
-  }
+// function LandingPage() {
+//   const navigate = useNavigate(); // Inicializa el hook de navegación
 
-  
   return (
     <div className="min-h-screen flex flex-col">
       {/* Barra de navegación */}
-      <header className="relative border-b border-gray-300 w-full p-4 flex justify-between items-center">
-        {/* Pseudo-elemento para la mancha con gradiente */}
-        <div className="absolute top-0 right-0 w-full h-full pointer-events-none">
-          <div
-            className="absolute top-0 right-0 w-64 h-64"
-            style={{
-              background:
-                "linear-gradient(135deg, rgba(0, 115, 184, 0.3), transparent)",
-              borderRadius: "50%",
-            }}
-          ></div>
-        </div>
-
+      <header className="bg-transparent border-b border-gray-300 text-white w-full p-4 flex justify-between items-center">
         {/* Logo alineado a la izquierda */}
         <div className="flex items-center">
           <img
             src="/logo-ico.png" // Ruta a la imagen dentro de public
             alt="AlphaNova Logo"
-            className="h-10 w-auto pl-4" // Ajusta el tamaño de la imagen según sea necesario
+            className="h-10 w-auto" // Ajusta el tamaño de la imagen según sea necesario
           />
-          <p className="text-blue-800 text-2xl font-bold ">AlphaNova</p>
         </div>
+
+        {/* Navegación centrada */}
+        <nav className="hidden md:flex flex-1 justify-center space-x-4">
+          <a href="#seccion-principal" className="hover:underline">
+            #seccion principal
+          </a>
+          <a href="#section1" className="hover:underline">
+            #section 1
+          </a>
+          <a href="#section2" className="hover:underline">
+            #section 2
+          </a>
+        </nav>
 
         {/* Botón alineado a la derecha */}
         <div>
           <button
-            className="border border-gray-800 px-4 py-2 rounded-lg"
-            onClick={() => navigate("/dashboard")} // Navega a /dashboard
+            className="bg-gray-200 text-gray-800 px-4 py-2 rounded-lg"
+            onClick={() => navigate('/dashboard')} // Navega a /dashboard
           >
             Ir a la aplicación
           </button>
@@ -69,90 +59,20 @@ function LandingPage() {
 
       {/* Sección principal con imagen de fondo */}
       <section
-        className="relative flex flex-col md:flex-row items-center justify-center md:justify-between  text-center p-8 bg-transparent"
-        // style={{
-        //   // backgroundImage: 'url("/rcgua.png")',
-        //   backgroundImage:
-        //     'linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("/rcgua.png")', // Fondo con transparencia
-        //   backgroundSize: "cover",
-        //   backgroundPosition: "top",
-        //   height: "90vh",
-        // }}
+        className="relative flex flex-col items-center justify-center text-white text-center p-8"
+        style={{
+          backgroundImage: 'url("/rcgua.png")', // Imagen de fondo
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          height: "60vh",
+        }}
       >
-        {/* Texto centrado */}
-        {/* <h1
-          className="text-6xl font-bold md:w-1/2"
-          data-aos="fade-up"
-          data-aos-duration="1000"
-          data-aos-delay="200"
-        >
-          Perfilador de lluvias <span className="text-blue-600"> Radar </span>
-        </h1> */}
-
-        <div className="flex flex-col items-center">
-          {/* Texto centrado */}
-          <h1
-            className="text-6xl font-bold md:w-1/2"
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            data-aos-delay="200"
-          >
-            Perfilador de lluvias <span className="text-blue-600">Radar</span>
-          </h1>
-          <br /> 
-          
-{/* Carrusel de íconos con desplazamiento continuo */}
-<div className="overflow-hidden mt-8 w-full h-full bg-gray-200">
-  <div className="max-w-2xl mx-auto flex justify-center items-center relative">
-    <ul className="flex items-center animate-infinite-scroll">
-      <li className="mx-4 transform transition-transform duration-300">
-        <img
-          width="100"
-          className="object-cover scale-on-center"
-          src="/img/marcas/1.png"
-          alt="Marca 1"
-        />
-      </li>
-      <li className="mx-4 transform transition-transform duration-300">
-        <img
-          width="100"
-          className="object-cover scale-on-center"
-          src="/img/marcas/2.png"
-          alt="Marca 2"
-        />
-      </li>
-      <li className="mx-4 transform transition-transform duration-300">
-        <img
-          width="100"
-          className="object-cover scale-on-center"
-          src="/img/marcas/3.png"
-          alt="Marca 3"
-        />
-      </li>
-    </ul>
-  </div>
-</div>
-</div>
-
-
-        {/* Imagen a la derecha */}
-        <div className="md:w-1/2 flex justify-center">
-          <img
-            src="../../../public/radar.webp"
-            alt="Radar"
-            className="h-auto rounded-lg shadow-lg"
-          />
-        </div>
+        <h1 className="text-6xl font-bold">Perfilador de lluvias</h1>
       </section>
 
       {/* Sección de contenido */}
       <section className="flex flex-col items-center p-8 bg-gray-100 text-gray-800">
-        <div
-          className="max-w-6xl"
-          data-aos="fade-up"
-          data-aos-duration="1000"
-          data-aos-delay="200"
-        >
+        <div className="max-w-4xl">
           <h2 className="text-3xl font-bold mb-4">Moderno Radar Perfilador</h2>
           <p className="text-lg mb-4">
             En Rancagua, la meteorología juega un papel crucial en la
@@ -188,9 +108,11 @@ function LandingPage() {
             <div className="text-center lg:text-left">
               <h3 className="text-2xl font-bold mb-2">Raúl Valenzuela</h3>
               <p className="text-gray-700">
-                Profesor de la Universidad de O&apos;Higgins (UOH), Rancagua,
-                Chile e Investigador Adjunto del Centro de Investigación en
-                Clima y Resiliencia (CR2)...
+                Profesor de la Universidad de O&apos;Higgins (UOH), Rancagua, Chile e
+                Investigador Adjunto del Centro de Investigación en Clima y
+                Resiliencia (CR2). Sus intereses incluyen procesos de
+                precipitación asociados a Ríos Atmosféricos, pronósticos de
+                precipitación y meteorología GPS.
               </p>
             </div>
           </div>
@@ -216,7 +138,29 @@ function LandingPage() {
             Se trata de un radar perfilador de lluvias que observará
             permanentemente —de forma vertical— sobre el lugar donde se
             encuentra ubicado, en este caso el Campus Rancagua de la
-            Universidad...
+            Universidad. “La desventaja es que solo vemos lo que ocurre sobre el
+            radar. Por ejemplo, si una lluvia pasa sobre San Fernando, pero no
+            en Rancagua, no la veremos. Pese a la dificultad, el radar estará
+            midiendo sobre Rancagua y ayudará a entender mejor la estructura de
+            la lluvia y su evolución en el tiempo”.
+          </p>
+          <p className="text-lg mb-4">
+            Este Micro Rain Radar (MRR), de la empresa Metek, fue adquirido
+            mediante un proyecto Fondecyt Iniciación e importado desde Alemania.
+            “El MRR mide precipitación en todo el perfil de la atmósfera y, por
+            lo tanto, podemos ver cambios en intensidad de lluvia con la altura
+            y también cambios en el estado de la precipitación, si es líquida o
+            sólida (nieve). Además, realiza mediciones cada 20 segundos
+            aproximadamente. Esto permite lograr un análisis mucho más profundo
+            de los mecanismos que realzan o suprimen la intensidad de la
+            precipitación”, señala el Dr. Valenzuela.
+          </p>
+          <p className="text-lg mb-4">
+            Para hacer una comparación, el académico explica que un pluviómetro
+            solo mide la precipitación en superficie y la frecuencia máxima
+            normalmente ronda los 5 minutos, “es decir, con un pluviómetro cada
+            5 minutos tenemos una medición, con el MRR medimos 15 veces más
+            rápido”, puntualiza.
           </p>
         </div>
       </section>
