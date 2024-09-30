@@ -5,7 +5,7 @@ const LoadingScreen = () => {
       <div className="min-h-screen flex flex-col justify-center items-center bg-white">
         <div className="loader-container">
           {/* Imagen del logo de carga */}
-          <img src="/logo-ico.png" alt="AlphaNova" className="w-20 h-20 mb-4 z-10" />
+          <img src="/app/logo-ico.png" alt="AlphaNova" className="w-20 h-20 mb-4 z-10" />
           {/* Círculo de carga alrededor del logo */}
           <div className="loader-circle"></div>
         </div>

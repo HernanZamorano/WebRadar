@@ -24,7 +24,7 @@ function LargeSidebar() {
         justifyContent: 'center',
       }}>
         <img
-          src="/logo-ico.png" // Ruta al logo en la carpeta public
+          src="/app/logo-ico.png" // Ruta al logo en la carpeta public
           alt="Logo"
           style={{
             width: '80px',

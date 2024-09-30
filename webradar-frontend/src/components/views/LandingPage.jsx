@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom"; // Importa useNavigate
 import LoadingScreen from "./LoadingScreen"; // Importa la pantalla de carga
 import AOS from "aos"; // Importa AOS
 import "aos/dist/aos.css"; // Importa los estilos de AOS
-import { Carousel } from "antd"; // Importa el carrusel de Ant Design
 
 function LandingPage() {
   const [loading, setLoading] = useState(true);
@@ -49,7 +48,7 @@ function LandingPage() {
         {/* Logo alineado a la izquierda */}
         <div className="flex items-center">
           <img
-            src="/logo-ico.png" // Ruta a la imagen dentro de public
+            src="/app/logo-ico.png" // Ruta a la imagen dentro de public
             alt="AlphaNova Logo"
             className="h-10 w-auto pl-4" // Ajusta el tamaño de la imagen según sea necesario
           />
@@ -109,7 +108,7 @@ function LandingPage() {
         <img
           width="100"
           className="object-cover scale-on-center"
-          src="/img/marcas/1.png"
+          src="/app/img/marcas/1.png"
           alt="Marca 1"
         />
       </li>
@@ -117,7 +116,7 @@ function LandingPage() {
         <img
           width="100"
           className="object-cover scale-on-center"
-          src="/img/marcas/2.png"
+          src="/app/img/marcas/2.png"
           alt="Marca 2"
         />
       </li>
@@ -125,7 +124,7 @@ function LandingPage() {
         <img
           width="100"
           className="object-cover scale-on-center"
-          src="/img/marcas/3.png"
+          src="/app/img/marcas/3.png"
           alt="Marca 3"
         />
       </li>
@@ -138,7 +137,7 @@ function LandingPage() {
         {/* Imagen a la derecha */}
         <div className="md:w-1/2 flex justify-center">
           <img
-            src="../../../public/radar.webp"
+            src="/app/radar.webp"
             alt="Radar"
             className="h-auto rounded-lg shadow-lg"
           />
@@ -180,7 +179,7 @@ function LandingPage() {
               className="w-32 h-32 rounded-full overflow-hidden border-4 border-blue-600 mb-4"
             >
               <img
-                src="/public/rv.png" // Ruta de la imagen de perfil
+                src="/app/rv.png" // Ruta de la imagen de perfil
                 alt="Raúl Valenzuela"
                 className="w-full h-full object-cover"
               />
@@ -202,7 +201,7 @@ function LandingPage() {
               className="block w-80 h-80 rounded-lg overflow-hidden border-4 border-blue-600"
             >
               <img
-                src="/public/landing.png" // Imagen representativa de la dashboard
+                src="/app/landing.png" // Imagen representativa de la dashboard
                 alt="Ir a la dashboard"
                 className="w-full h-full object-cover"
               />
@@ -212,11 +211,33 @@ function LandingPage() {
 
         {/* Nueva sección: Información detallada del radar perfilador de lluvias */}
         <div className="max-w-4xl mt-8">
-          <p className="text-lg mb-4">
+        <p className="text-lg mb-4">
             Se trata de un radar perfilador de lluvias que observará
             permanentemente —de forma vertical— sobre el lugar donde se
             encuentra ubicado, en este caso el Campus Rancagua de la
-            Universidad...
+            Universidad. “La desventaja es que solo vemos lo que ocurre sobre el
+            radar. Por ejemplo, si una lluvia pasa sobre San Fernando, pero no
+            en Rancagua, no la veremos. Pese a la dificultad, el radar estará
+            midiendo sobre Rancagua y ayudará a entender mejor la estructura de
+            la lluvia y su evolución en el tiempo”.
+          </p>
+          <p className="text-lg mb-4">
+            Este Micro Rain Radar (MRR), de la empresa Metek, fue adquirido
+            mediante un proyecto Fondecyt Iniciación e importado desde Alemania.
+            “El MRR mide precipitación en todo el perfil de la atmósfera y, por
+            lo tanto, podemos ver cambios en intensidad de lluvia con la altura
+            y también cambios en el estado de la precipitación, si es líquida o
+            sólida (nieve). Además, realiza mediciones cada 20 segundos
+            aproximadamente. Esto permite lograr un análisis mucho más profundo
+            de los mecanismos que realzan o suprimen la intensidad de la
+            precipitación”, señala el Dr. Valenzuela.
+          </p>
+          <p className="text-lg mb-4">
+            Para hacer una comparación, el académico explica que un pluviómetro
+            solo mide la precipitación en superficie y la frecuencia máxima
+            normalmente ronda los 5 minutos, “es decir, con un pluviómetro cada
+            5 minutos tenemos una medición, con el MRR medimos 15 veces más
+            rápido”, puntualiza.
           </p>
         </div>
       </section>
@@ -226,7 +247,7 @@ function LandingPage() {
         {/* Primera imagen con enlace a www.uoh.cl */}
         <a href="https://www.uoh.cl" target="_blank" rel="noopener noreferrer">
           <img
-            src="/public/uoh.png" // Ruta de la imagen UOH
+            src="/app/uoh.png" // Ruta de la imagen UOH
             alt="UOH Logo"
             className="w-100 h-32 object-cover"
           />
@@ -234,14 +255,14 @@ function LandingPage() {
 
         {/* Segunda imagen */}
         <img
-          src="/public/eing.png" // Segunda imagen
+          src="/app/eing.png" // Segunda imagen
           alt="Segunda imagen"
           className="w-50 h-32 object-cover"
         />
 
         {/* Tercera imagen */}
         <img
-          src="/public/ap.png" // Tercera imagen
+          src="/app/public/ap.png" // Tercera imagen
           alt="Tercera imagen"
           className="w-50 h-32 object-cover"
         />
