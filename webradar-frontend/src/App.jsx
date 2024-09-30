@@ -13,7 +13,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={< LandingPage />} />
+        <Route path="/app" element={< LandingPage />} />
         <Route path="/dashboard" element={< Dashboard />} />
         <Route path="/data" element={< DataFromAPI />} />
         <Route path="/grafico" element={<GraficoInteractivo />} />  {/* Nueva ruta */}
