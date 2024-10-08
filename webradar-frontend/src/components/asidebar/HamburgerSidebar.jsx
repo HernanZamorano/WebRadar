@@ -33,7 +33,7 @@ function HamburgerSidebar() {
             Resumen diario
           </Menu.Item>
           <Menu.Item key="2" icon={<CloudIco />}>
-            Eventos
+            Historico
           </Menu.Item>
         </Menu>
       </Drawer>

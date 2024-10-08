@@ -1,39 +1,33 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom"; // Importa useNavigate
-import LoadingScreen from "./LoadingScreen"; // Importa la pantalla de carga
-import AOS from "aos"; // Importa AOS
-import "aos/dist/aos.css"; // Importa los estilos de AOS
+import { useNavigate } from "react-router-dom";
+import LoadingScreen from "./LoadingScreen";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function LandingPage() {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Simula el tiempo de carga antes de mostrar el contenido
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 700); // Ajusta el tiempo de la pantalla de carga según lo necesario
+    }, 700);
 
-    // Inicializa AOS
     AOS.init({
-      duration: 1000, // Duración de la animación
-      delay: 200, // Retraso
+      duration: 1000,
+      delay: 200,
     });
 
     return () => clearTimeout(timer);
   }, []);
 
   if (loading) {
-    // Muestra la pantalla de carga mientras `loading` sea true
     return <LoadingScreen />;
   }
 
-  
   return (
     <div className="min-h-screen flex flex-col">
-      {/* Barra de navegación */}
       <header className="relative border-b border-gray-300 w-full p-4 flex justify-between items-center">
-        {/* Pseudo-elemento para la mancha con gradiente */}
         <div className="absolute top-0 right-0 w-full h-full pointer-events-none">
           <div
             className="absolute top-0 right-0 w-64 h-64"
@@ -45,51 +39,29 @@ function LandingPage() {
           ></div>
         </div>
 
-        {/* Logo alineado a la izquierda */}
         <div className="flex items-center">
           <img
-            src="/app/logo-ico.png" // Ruta a la imagen dentro de public
+            src="/app/logo-ico.png"
             alt="AlphaNova Logo"
-            className="h-10 w-auto pl-4" // Ajusta el tamaño de la imagen según sea necesario
+            className="h-10 w-auto pl-4"
           />
-          <p className="text-blue-800 text-2xl font-bold ">AlphaNova</p>
+          <p className="text-blue-800 text-2xl font-bold">AlphaNova</p>
         </div>
 
-        {/* Botón alineado a la derecha */}
         <div>
           <button
             className="border border-gray-800 px-4 py-2 rounded-lg"
-            onClick={() => navigate("/dashboard")} // Navega a /dashboard
+            onClick={() => navigate("/app/dashboard")}
           >
             Ir a la aplicación
           </button>
         </div>
       </header>
 
-      {/* Sección principal con imagen de fondo */}
       <section
-        className="relative flex flex-col md:flex-row items-center justify-center md:justify-between  text-center p-8 bg-transparent"
-        // style={{
-        //   // backgroundImage: 'url("/rcgua.png")',
-        //   backgroundImage:
-        //     'linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("/rcgua.png")', // Fondo con transparencia
-        //   backgroundSize: "cover",
-        //   backgroundPosition: "top",
-        //   height: "90vh",
-        // }}
+        className="relative flex flex-col md:flex-row items-center justify-center md:justify-between text-center p-8 bg-transparent mx-auto"
       >
-        {/* Texto centrado */}
-        {/* <h1
-          className="text-6xl font-bold md:w-1/2"
-          data-aos="fade-up"
-          data-aos-duration="1000"
-          data-aos-delay="200"
-        >
-          Perfilador de lluvias <span className="text-blue-600"> Radar </span>
-        </h1> */}
-
         <div className="flex flex-col items-center">
-          {/* Texto centrado */}
           <h1
             className="text-6xl font-bold md:w-1/2"
             data-aos="fade-up"
@@ -98,43 +70,9 @@ function LandingPage() {
           >
             Perfilador de lluvias <span className="text-blue-600">Radar</span>
           </h1>
-          <br /> 
-          
-{/* Carrusel de íconos con desplazamiento continuo */}
-<div className="overflow-hidden mt-8 w-full h-full bg-gray-200">
-  <div className="max-w-2xl mx-auto flex justify-center items-center relative">
-    <ul className="flex items-center animate-infinite-scroll">
-      <li className="mx-4 transform transition-transform duration-300">
-        <img
-          width="100"
-          className="object-cover scale-on-center"
-          src="/app/img/marcas/1.png"
-          alt="Marca 1"
-        />
-      </li>
-      <li className="mx-4 transform transition-transform duration-300">
-        <img
-          width="100"
-          className="object-cover scale-on-center"
-          src="/app/img/marcas/2.png"
-          alt="Marca 2"
-        />
-      </li>
-      <li className="mx-4 transform transition-transform duration-300">
-        <img
-          width="100"
-          className="object-cover scale-on-center"
-          src="/app/img/marcas/3.png"
-          alt="Marca 3"
-        />
-      </li>
-    </ul>
-  </div>
-</div>
-</div>
+          <br />
+        </div>
 
-
-        {/* Imagen a la derecha */}
         <div className="md:w-1/2 flex justify-center">
           <img
             src="/app/radar.webp"
@@ -144,34 +82,21 @@ function LandingPage() {
         </div>
       </section>
 
-      {/* Sección de contenido */}
-      <section className="flex flex-col items-center p-8 bg-gray-100 text-gray-800">
+      <section className="flex flex-col items-center p-8 bg-gray-100 text-gray-800 max-w-screen-3xl mx-auto">
         <div
-          className="max-w-6xl"
+          className="max-w-screen-2xl mt-8 p-8"
           data-aos="fade-up"
           data-aos-duration="1000"
           data-aos-delay="200"
         >
           <h2 className="text-3xl font-bold mb-4">Moderno Radar Perfilador</h2>
           <p className="text-lg mb-4">
-            En Rancagua, la meteorología juega un papel crucial en la
-            comprensión de los patrones climáticos de la región, especialmente
-            en relación con las precipitaciones. El análisis detallado de
-            fenómenos atmosféricos, como la isoterma cero, es fundamental para
-            predecir cambios en el clima y manejar adecuadamente los recursos
-            hídricos. Sin embargo, el proceso tradicional de análisis presenta
-            desafíos en cuanto a la eficiencia y la capacidad de manejar grandes
-            volúmenes de datos en tiempo real. Por ello, se ha vuelto esencial
-            el uso de tecnologías avanzadas que permitan un monitoreo más
-            preciso y automatizado, optimizando así las herramientas disponibles
-            para mejorar la predicción y el análisis del clima en la región.
+            En Rancagua, la meteorología juega un papel crucial en la comprensión de los patrones climáticos de la región, especialmente en relación con las precipitaciones. El análisis detallado de fenómenos atmosféricos, como la isoterma cero, es fundamental para predecir cambios en el clima y manejar adecuadamente los recursos hídricos. Sin embargo, el proceso tradicional de análisis presenta desafíos en cuanto a la eficiencia y la capacidad de manejar grandes volúmenes de datos en tiempo real. Por ello, se ha vuelto esencial el uso de tecnologías avanzadas que permitan un monitoreo más preciso y automatizado, optimizando así las herramientas disponibles para mejorar la predicción y el análisis del clima en la región.
           </p>
         </div>
 
-        {/* Nueva sección con información y enlace a la dashboard */}
-        <div className="flex flex-col lg:flex-row items-center mt-8 bg-white shadow-lg p-6 rounded-lg max-w-4xl">
-          {/* Columna izquierda: Información de Raúl Valenzuela */}
-          <div className="lg:w-1/2 lg:mr-6 mb-4 lg:mb-0 flex flex-col items-center lg:items-start">
+        <div className="flex flex-col lg:flex-row items-center mt-8 bg-white shadow-lg p-6 rounded-lg max-w-screen-2xl mx-auto">
+          <div className="lg:mr-6 mb-4 lg:mb-0 flex flex-col items-center lg:items-start">
             <a
               href="https://raulvalenzuela.cl"
               target="_blank"
@@ -179,7 +104,7 @@ function LandingPage() {
               className="w-32 h-32 rounded-full overflow-hidden border-4 border-blue-600 mb-4"
             >
               <img
-                src="/app/rv.png" // Ruta de la imagen de perfil
+                src="/app/rv.png"
                 alt="Raúl Valenzuela"
                 className="w-full h-full object-cover"
               />
@@ -194,14 +119,13 @@ function LandingPage() {
             </div>
           </div>
 
-          {/* Columna derecha: Imagen con enlace a la dashboard */}
           <div className="lg:w-1/2 flex justify-center lg:justify-end">
             <a
-              href="/dashboard" // Actualiza la ruta para que navegue correctamente
+              href="/app/dashboard"
               className="block w-80 h-80 rounded-lg overflow-hidden border-4 border-blue-600"
             >
               <img
-                src="/app/landing.png" // Imagen representativa de la dashboard
+                src="/app/landing.png"
                 alt="Ir a la dashboard"
                 className="w-full h-full object-cover"
               />
@@ -209,9 +133,13 @@ function LandingPage() {
           </div>
         </div>
 
-        {/* Nueva sección: Información detallada del radar perfilador de lluvias */}
-        <div className="max-w-4xl mt-8">
-        <p className="text-lg mb-4">
+        <div
+          className="mt-8 p-8 max-w-screen-2xl"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-delay="200"
+        >
+          <p className="text-lg mb-4">
             Se trata de un radar perfilador de lluvias que observará
             permanentemente —de forma vertical— sobre el lugar donde se
             encuentra ubicado, en este caso el Campus Rancagua de la
@@ -242,34 +170,17 @@ function LandingPage() {
         </div>
       </section>
 
-      {/* Sección final con tres imágenes en horizontal */}
-      <footer className="flex justify-center bg-blue-700 p-6 space-x-6">
-        {/* Primera imagen con enlace a www.uoh.cl */}
-        <a href="https://www.uoh.cl" target="_blank" rel="noopener noreferrer">
-          <img
-            src="/app/uoh.png" // Ruta de la imagen UOH
-            alt="UOH Logo"
-            className="w-100 h-32 object-cover"
-          />
-        </a>
-
-        {/* Segunda imagen */}
-        <img
-          src="/app/eing.png" // Segunda imagen
-          alt="Segunda imagen"
-          className="w-50 h-32 object-cover"
-        />
-
-        {/* Tercera imagen */}
-        <img
-          src="/app/public/ap.png" // Tercera imagen
-          alt="Tercera imagen"
-          className="w-50 h-32 object-cover"
-        />
+      <footer className="flex flex-col md:flex-row justify-center bg-blue-700 p-6">
+        <div className="flex flex-wrap justify-center items-center gap-6 mx-auto">
+          <a href="https://www.uoh.cl" target="_blank" rel="noopener noreferrer">
+            <img src="/app/uoh.png" alt="UOH Logo" className="max-w-full h-auto md:w-32" />
+          </a>
+          <img src="/app/Logo-escuela-ing.svg" alt="Escuela de Ingeniería" className="max-w-full h-auto md:w-32" />
+          <img src="/app/logo-alphanova-footer.svg" alt="Logo AlphaNova" className="max-w-full h-auto md:w-32" />
+        </div>
       </footer>
     </div>
   );
 }
 
-// Exportar el componente
 export default LandingPage;

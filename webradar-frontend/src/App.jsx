@@ -14,9 +14,9 @@ function App() {
     <Router>
       <Routes>
         <Route path="/app" element={< LandingPage />} />
-        <Route path="/dashboard" element={< Dashboard />} />
-        <Route path="/data" element={< DataFromAPI />} />
-        <Route path="/grafico" element={<GraficoInteractivo />} />  {/* Nueva ruta */}
+        <Route path="/app/dashboard" element={< Dashboard />} />
+        <Route path="/app/data" element={< DataFromAPI />} />
+        <Route path="/app/grafico" element={<GraficoInteractivo />} />  
 
       </Routes>
     </Router>

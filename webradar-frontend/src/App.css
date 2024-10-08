@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.calendar, .table {
+    flex: 1 1 45%;
+    margin: 10px;
+}
+
+@media (max-width: 768px) {
+    .calendar, .table {
+        flex: 1 1 100%; /* En pantallas pequeñas, ocupan el 100% del ancho */
+    }
+}
