@@ -21,4 +21,21 @@
     background-color: #40a9ff;
     cursor: pointer;
   }
+  .calendar-table-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap; /* Mantiene los elementos en una sola fila en pantallas grandes */
+  }
+  
+  /* Media query para pantallas con ancho menor a 500px */
+  @media (max-width: 740px) {
+    .calendar-table-container {
+      flex-direction: column; /* Cambia a columna cuando el ancho es menor a 740px */
+    }
+  
+    .calendar-container, .table-container {
+      max-height: none; /* Permite que los elementos se expanda en formato columna */
+      padding: 10px; /* Añade un padding para separar los elementos */
+    }
+  }
   

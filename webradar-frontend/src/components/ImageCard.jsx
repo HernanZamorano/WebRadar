@@ -13,7 +13,6 @@ const GraficoInteractivo = () => {
     fetch('http://127.0.0.1:8000/api/grafico/')
       .then((response) => response.json())
       .then((data) => {
-        console.log('Datos recibidos:', data);  // Verifica la estructura de los datos recibidos
         setGraphData(data.data);
         setLayout(data.layout);
       })
@@ -36,7 +35,7 @@ const GraficoInteractivo = () => {
         [0.4, 'rgb(255, 255, 0)'], // Amarillo (precipitación moderada, 20 dBZ)
         [0.6, 'rgb(255, 165, 0)'], // Naranja (precipitación fuerte, 30 dBZ)
         [0.8, 'rgb(255, 0, 0)'],   // Rojo (precipitación intensa, 40 dBZ)
-        [1.0, 'rgb(255, 255, 255)'] // Blanco (granizo o evento extremo, 50+ dBZ)
+        [1.0, 'rgb(128, 0, 128)']  // Morado (granizo o evento extremo, 50+ dBZ)
       ];
       trace.zmin = 0;  // Valor mínimo de reflectividad (0 dBZ)
       trace.zmax = 50; // Valor máximo de reflectividad (50 dBZ)
@@ -47,7 +46,7 @@ const GraficoInteractivo = () => {
     <Plot
       data={graphData}
       layout={layout}
-      style={{ width: "100%", height: "100%" }}
+      style={{ width: "100%", height: "calc(100% + 100px)" }}
     />
   );
 };
@@ -68,7 +67,7 @@ function ImageCard() {
 
   return (
     <div
-      className="bg-white rounded-lg shadow-lg w-full"
+      className="bg-white rounded-lg shadow-lg w-full content-container"
       style={{
         margin: '10px',
         height: 'calc(100vh - 40px)', // Ajustar la altura total al alto de la pantalla
@@ -77,16 +76,17 @@ function ImageCard() {
         padding: '10px', // Padding para evitar que el contenido se desborde
       }}
     >
-      <h2 className="text-xl font-bold mb-4 text-center">Gráfico Interactivo</h2>
+      <h2 className="text-xl font-bold mb-2 text-center">Gráfico Interactivo</h2>
       <div style={{ flex: '1', display: 'flex', flexDirection: 'column' }}>
         <div style={{ overflowX: 'auto', whiteSpace: 'nowrap', flex: '1' }}>
           <GraficoInteractivo /> {/* Aquí se muestra el gráfico */}
         </div>
-        <div style={{ flex: '1', display: 'flex', borderTop: '1px solid #ddd', padding: '10px' }}>
-          <div style={{ flex: '1', padding: '0 10px', overflow: 'auto', maxHeight: '300px' }}>
+        <div className="calendar-table-container" style={{ flex: '1', display: 'flex', borderTop: '1px solid #ddd', padding: '10px', flexWrap: 'wrap' }}>
+          <div className="calendar-container" style={{ flex: '1', padding: '0 10px', overflow: 'auto', maxHeight: '300px' }}>
             <Calendar />
           </div>
-          <div style={{ flex: '1', padding: '0 10px', overflow: 'auto', maxHeight: '300px' }}>
+
+          <div className="table-container" style={{ flex: '1', padding: '0 10px', overflow: 'auto', maxHeight: '300px' }}>
             <Table columns={columns} dataSource={data} pagination={false} />
           </div>
         </div>
