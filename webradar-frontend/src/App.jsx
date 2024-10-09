@@ -3,6 +3,7 @@ import LandingPage from './components/views/LandingPage';
 import Dashboard from './components/views/Dashboard';
 import DataFromAPI from './components/views/DataFromAPI';  // Importa el nuevo componente
 import GraficoInteractivo from './components/views/GraficoInteractivo';  // Importa el nuevo componente
+import WhoWeAre from './components/views/WhoWeAre';
 import { useEffect } from "react";
 
 
@@ -17,7 +18,7 @@ function App() {
         <Route path="/app/dashboard" element={< Dashboard />} />
         <Route path="/app/data" element={< DataFromAPI />} />
         <Route path="/app/grafico" element={<GraficoInteractivo />} />  
-
+        <Route path="/app/quienes-somos" element={<WhoWeAre />} /> 
       </Routes>
     </Router>
   );
