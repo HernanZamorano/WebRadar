@@ -92,7 +92,7 @@ function LargeSidebar() {
 
       <Menu
         mode="inline"
-        defaultSelectedKeys={['1']}
+        defaultSelectedKeys={['2']}
         style={{ height: 'calc(100% - 120px)', borderRight: 0, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}
       >
         <div>
@@ -108,7 +108,7 @@ function LargeSidebar() {
         <Menu.Item 
           key="logout" 
           icon={<LogoutOutlined />} 
-          style={{ color: 'red', marginTop: 'auto' }} 
+          style={{ color: 'red', marginTop: 'auto', display: 'block' }} 
           onClick={() => navigate("/app")} // Redirige a la ruta de LandingPage
         >
           Salir
