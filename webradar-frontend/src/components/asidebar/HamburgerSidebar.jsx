@@ -21,35 +21,38 @@ function HamburgerSidebar() {
 
   return (
     <>
-      <Button type="primary" onClick={showDrawer} icon={<MenuOutlined />} className="lg:hidden" />
+      {/* Botón del menú hamburguesa */}
+      <Button
+        type="primary"
+        onClick={showDrawer}
+        icon={<MenuOutlined />}
+        className="lg:hidden"
+      />
+      
       <Drawer
-        title="Menu"
         placement="left"
         closable={false}
         onClose={onClose}
         visible={visible}
         bodyStyle={{ padding: 0 }}
       >
+        {/* Encabezado del Drawer */}
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px' }}>
+          <h2 style={{ margin: 0,}}>Menu</h2>
+          <Button onClick={onClose} type="default" style={{color: 'blue'}}>
+            ocultar
+          </Button>
+        </div>
+        
         <Menu mode="inline" defaultSelectedKeys={['2']}>
-          <Menu.Item key="1" icon={<CloudSun />}>
-            Resumen diario
-          </Menu.Item>
-          <Menu.Item key="2" icon={<CloudIco />}>
-            Historico
-          </Menu.Item>
-
-          {/* Botón de Salir */}
-          <Menu.Item 
-            key="logout" 
-            icon={<LogoutOutlined />} 
-            style={{ color: 'red', marginTop: 'auto', display: 'block' }}  
-            onClick={() => {
-              onClose(); // Cierra el Drawer
-              navigate("/app"); // Redirige a la ruta de LandingPage
-            }}
-          >
-            Salir
-          </Menu.Item>
+          <div>
+            <Menu.Item key="1" icon={<CloudSun />}>
+              Resumen diario
+            </Menu.Item>
+            <Menu.Item key="2" icon={<CloudIco />}>
+              Histórico
+            </Menu.Item>
+          </div>
         </Menu>
       </Drawer>
     </>
