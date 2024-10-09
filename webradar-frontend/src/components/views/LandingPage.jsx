@@ -47,7 +47,7 @@ function LandingPage() {
           />
           <p className="text-blue-800 text-2xl font-bold">AlphaNova</p>
         </div>
-
+          
         <div>
           <button
             className="border border-gray-800 px-4 py-2 rounded-lg"
@@ -58,26 +58,23 @@ function LandingPage() {
         </div>
       </header>
 
-      <section
-        className="relative flex flex-col md:flex-row items-center justify-center md:justify-between text-center p-8 bg-transparent mx-auto"
-      >
-        <div className="flex flex-col items-center">
+      <section className="relative flex flex-col md:flex-row items-center justify-center md:justify-between text-center p-8 bg-transparent mx-auto">
+        <div className="flex flex-col items-center md:w-1/2">
           <h1
-            className="text-6xl font-bold md:w-1/2"
+            className="text-4xl md:text-6xl font-bold"
             data-aos="fade-up"
             data-aos-duration="1000"
             data-aos-delay="200"
           >
             Perfilador de lluvias <span className="text-blue-600">Radar</span>
           </h1>
-          <br />
         </div>
 
-        <div className="md:w-1/2 flex justify-center">
+        <div className="w-full md:w-1/2 flex justify-center mt-4 md:mt-0">
           <img
             src="/app/radar.webp"
             alt="Radar"
-            className="h-auto rounded-lg shadow-lg"
+            className="w-full h-auto rounded-lg shadow-lg max-w-xs md:max-w-lg"
           />
         </div>
       </section>
@@ -89,9 +86,9 @@ function LandingPage() {
           data-aos-duration="1000"
           data-aos-delay="200"
         >
-          <h2 className="text-3xl font-bold mb-4">Moderno Radar Perfilador</h2>
+          <h2 className="text-3xl font-bold mb-4 text-center md:text-left">Moderno Radar Perfilador</h2>
           <p className="text-lg mb-4">
-            En Rancagua, la meteorología juega un papel crucial en la comprensión de los patrones climáticos de la región, especialmente en relación con las precipitaciones. El análisis detallado de fenómenos atmosféricos, como la isoterma cero, es fundamental para predecir cambios en el clima y manejar adecuadamente los recursos hídricos. Sin embargo, el proceso tradicional de análisis presenta desafíos en cuanto a la eficiencia y la capacidad de manejar grandes volúmenes de datos en tiempo real. Por ello, se ha vuelto esencial el uso de tecnologías avanzadas que permitan un monitoreo más preciso y automatizado, optimizando así las herramientas disponibles para mejorar la predicción y el análisis del clima en la región.
+          En Rancagua, la meteorología juega un papel crucial en la comprensión de los patrones climáticos de la región, especialmente en relación con las precipitaciones. El análisis detallado de fenómenos atmosféricos, como la isoterma cero, es fundamental para predecir cambios en el clima y manejar adecuadamente los recursos hídricos. Sin embargo, el proceso tradicional de análisis presenta desafíos en cuanto a la eficiencia y la capacidad de manejar grandes volúmenes de datos en tiempo real. Por ello, se ha vuelto esencial el uso de tecnologías avanzadas que permitan un monitoreo más preciso y automatizado, optimizando así las herramientas disponibles para mejorar la predicción y el análisis del clima en la región.
           </p>
         </div>
 
@@ -112,9 +109,9 @@ function LandingPage() {
             <div className="text-center lg:text-left">
               <h3 className="text-2xl font-bold mb-2">Raúl Valenzuela</h3>
               <p className="text-gray-700">
-                Profesor de la Universidad de O&apos;Higgins (UOH), Rancagua,
-                Chile e Investigador Adjunto del Centro de Investigación en
-                Clima y Resiliencia (CR2)...
+              Profesor de la Universidad de O'Higgins (UOH), Rancagua, Chile e Investigador Adjunto del Centro 
+              de Investigación en Clima y Resiliencia (CR2). Sus intereses incluyen procesos de precipitación 
+              +asociados a Ríos Atmosféricos, pronósticos de precipitación y meteorología GPS.
               </p>
             </div>
           </div>
@@ -122,7 +119,7 @@ function LandingPage() {
           <div className="lg:w-1/2 flex justify-center lg:justify-end">
             <a
               href="/app/dashboard"
-              className="block w-80 h-80 rounded-lg overflow-hidden border-4 border-blue-600"
+              className="block w-64 h-64 md:w-80 md:h-80 rounded-lg overflow-hidden border-4 border-blue-600"
             >
               <img
                 src="/app/landing.png"
@@ -139,7 +136,7 @@ function LandingPage() {
           data-aos-duration="1000"
           data-aos-delay="200"
         >
-          <p className="text-lg mb-4">
+         <p className="text-lg mb-4">
             Se trata de un radar perfilador de lluvias que observará
             permanentemente —de forma vertical— sobre el lugar donde se
             encuentra ubicado, en este caso el Campus Rancagua de la
