@@ -4,7 +4,7 @@ import LoadingScreen from "./LoadingScreen";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-function LandingPage() {
+function WhoWeAre() {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
@@ -47,26 +47,19 @@ function LandingPage() {
           />
           <p className="text-blue-800 text-2xl font-bold">AlphaNova</p>
         </div>
+        <nav className="space-x-4">
+          {/* Modificación: enlace hacia la ruta /Página Principal */}
+          <Link to="/" relative="path">
+          Página Principal
+          </Link> 
+          {/* Modificación: enlace hacia la ruta /quienes-somos */}
+          <Link to="/quienes-somos" relative="path">
+          Quienes Somos
+        </Link>   
+                  
+        </nav>    
+        <div>
 
-        <div className="flex space-x-4">
-        <button
-            className="text-gray-800 px-4 py-2"
-            onClick={() => navigate("/app/")}
-          >
-            Pagina Principal
-          </button>
-          <button
-            className="text-gray-800 px-4 py-2"
-            onClick={() => navigate("/app/quienes-somos")}
-          >
-            Quienes Somos
-          </button>
-          <button
-            className="text-gray-800 px-4 py-2"
-            onClick={() => navigate("/app/faq")}
-          >
-            Preguntas Frecuentes
-          </button>
           <button
             className="border border-gray-800 px-4 py-2 rounded-lg"
             onClick={() => navigate("/app/dashboard")}
@@ -76,23 +69,26 @@ function LandingPage() {
         </div>
       </header>
 
-      <section className="relative flex flex-col md:flex-row items-center justify-center md:justify-between text-center p-8 bg-transparent mx-auto">
-        <div className="flex flex-col items-center md:w-1/2">
+      <section
+        className="relative flex flex-col md:flex-row items-center justify-center md:justify-between text-center p-8 bg-transparent mx-auto"
+      >
+        <div className="flex flex-col items-center">
           <h1
-            className="text-4xl md:text-6xl font-bold"
+            className="text-6xl font-bold md:w-1/2"
             data-aos="fade-up"
             data-aos-duration="1000"
             data-aos-delay="200"
           >
             Perfilador de lluvias <span className="text-blue-600">Radar</span>
           </h1>
+          <br />
         </div>
 
-        <div className="w-full md:w-1/2 flex justify-center mt-4 md:mt-0">
+        <div className="md:w-1/2 flex justify-center">
           <img
             src="/app/radar.webp"
             alt="Radar"
-            className="w-full h-auto rounded-lg shadow-lg max-w-xs md:max-w-lg"
+            className="h-auto rounded-lg shadow-lg"
           />
         </div>
       </section>
@@ -104,8 +100,8 @@ function LandingPage() {
           data-aos-duration="1000"
           data-aos-delay="200"
         >
-          <h2 className="text-3xl font-bold mb-4 text-center md:text-left">Moderno Radar Perfilador</h2>
-          <p className="text-lg mb-4 text-justify">
+          <h2 className="text-3xl font-bold mb-4">Moderno Radar Perfilador</h2>
+          <p className="text-lg mb-4">
             En Rancagua, la meteorología juega un papel crucial en la comprensión de los patrones climáticos de la región, especialmente en relación con las precipitaciones. El análisis detallado de fenómenos atmosféricos, como la isoterma cero, es fundamental para predecir cambios en el clima y manejar adecuadamente los recursos hídricos. Sin embargo, el proceso tradicional de análisis presenta desafíos en cuanto a la eficiencia y la capacidad de manejar grandes volúmenes de datos en tiempo real. Por ello, se ha vuelto esencial el uso de tecnologías avanzadas que permitan un monitoreo más preciso y automatizado, optimizando así las herramientas disponibles para mejorar la predicción y el análisis del clima en la región.
           </p>
         </div>
@@ -126,11 +122,10 @@ function LandingPage() {
             </a>
             <div className="text-center lg:text-left">
               <h3 className="text-2xl font-bold mb-2">Raúl Valenzuela</h3>
-              
-              <p className="text-gray-700 text-justify">
-                Profesor de la Universidad de O'Higgins (UOH), Rancagua, Chile e Investigador Adjunto del Centro 
-                de Investigación en Clima y Resiliencia (CR2). Sus intereses incluyen procesos de precipitación 
-                asociados a Ríos Atmosféricos, pronósticos de precipitación y meteorología GPS.
+              <p className="text-gray-700">
+              Profesor de la Universidad de O'Higgins (UOH), Rancagua, Chile e Investigador Adjunto del Centro 
+              de Investigación en Clima y Resiliencia (CR2). Sus intereses incluyen procesos de precipitación 
+              +asociados a Ríos Atmosféricos, pronósticos de precipitación y meteorología GPS.
               </p>
             </div>
           </div>
@@ -138,7 +133,7 @@ function LandingPage() {
           <div className="lg:w-1/2 flex justify-center lg:justify-end">
             <a
               href="/app/dashboard"
-              className="block w-64 h-64 md:w-80 md:h-80 rounded-lg overflow-hidden border-4 border-blue-600"
+              className="block w-80 h-80 rounded-lg overflow-hidden border-4 border-blue-600"
             >
               <img
                 src="/app/landing.png"
@@ -155,7 +150,7 @@ function LandingPage() {
           data-aos-duration="1000"
           data-aos-delay="200"
         >
-          <p className="text-lg mb-4 text-justify">
+          <p className="text-lg mb-4">
             Se trata de un radar perfilador de lluvias que observará
             permanentemente —de forma vertical— sobre el lugar donde se
             encuentra ubicado, en este caso el Campus Rancagua de la
@@ -165,7 +160,7 @@ function LandingPage() {
             midiendo sobre Rancagua y ayudará a entender mejor la estructura de
             la lluvia y su evolución en el tiempo”.
           </p>
-          <p className="text-lg mb-4 text-justify">
+          <p className="text-lg mb-4">
             Este Micro Rain Radar (MRR), de la empresa Metek, fue adquirido
             mediante un proyecto Fondecyt Iniciación e importado desde Alemania.
             “El MRR mide precipitación en todo el perfil de la atmósfera y, por
@@ -176,7 +171,7 @@ function LandingPage() {
             de los mecanismos que realzan o suprimen la intensidad de la
             precipitación”, señala el Dr. Valenzuela.
           </p>
-          <p className="text-lg mb-4 text-justify">
+          <p className="text-lg mb-4">
             Para hacer una comparación, el académico explica que un pluviómetro
             solo mide la precipitación en superficie y la frecuencia máxima
             normalmente ronda los 5 minutos, “es decir, con un pluviómetro cada
@@ -199,4 +194,4 @@ function LandingPage() {
   );
 }
 
-export default LandingPage;
+export default WhoWeAre;

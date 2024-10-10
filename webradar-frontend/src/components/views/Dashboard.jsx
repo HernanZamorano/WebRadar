@@ -3,7 +3,7 @@ import HamburgerSidebar from '../asidebar/HamburgerSidebar';
 import ImageCard from '../ImageCard';
 import { Layout } from 'antd';
 
-const {  Content } = Layout;
+const { Content } = Layout;
 
 function Dashboard() {
   return (
@@ -16,9 +16,16 @@ function Dashboard() {
 
       {/* Main content */}
       <Layout>
-       
-        <Content style={{ margin: '10px', padding: '0', backgroundColor: '#f0f2f5' }}>
-          <div className="w-full">
+        <Content 
+          style={{ 
+            margin: '10px', 
+            padding: '0', 
+            backgroundColor: '#f0f2f5',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center', // Centrar el contenido en pantallas pequeñas
+          }}>
+          <div className="w-full max-w-screen-2xl p-4">
             {/* Tarjeta con la imagen */}
             <ImageCard />
           </div>
@@ -29,8 +36,6 @@ function Dashboard() {
 }
 
 export default Dashboard;
-
-
 
 // import LargeSidebar from '../asidebar/LargeSidebar';
 // import HamburgerSidebar from '../asidebar/HamburgerSidebar';

@@ -11,7 +11,10 @@
     flex: 1 1 45%;
     margin: 10px;
 }
-
+.text-justify {
+    text-align: justify;
+  }
+  
 @media (max-width: 768px) {
     .calendar, .table {
         flex: 1 1 100%; /* En pantallas pequeñas, ocupan el 100% del ancho */
