@@ -5,6 +5,7 @@ import DataFromAPI from './components/views/DataFromAPI';  // Importa el nuevo c
 import GraficoInteractivo from './components/views/GraficoInteractivo';  // Importa el nuevo componente
 import WhoWeAre from './components/views/WhoWeAre';
 import { useEffect } from "react";
+import AboutUs from './components/views/AboutUs';
 
 
 
@@ -18,7 +19,8 @@ function App() {
         <Route path="/app/dashboard" element={< Dashboard />} />
         <Route path="/app/data" element={< DataFromAPI />} />
         <Route path="/app/grafico" element={<GraficoInteractivo />} />  
-        <Route path="/app/quienes-somos" element={<WhoWeAre />} /> 
+        <Route path="/app/quienes-somos" element={<AboutUs />} /> 
+        
       </Routes>
     </Router>
   );
