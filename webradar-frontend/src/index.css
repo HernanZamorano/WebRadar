@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* En tu archivo CSS */
+.hover\:underline-blue-500:hover {
+    text-decoration: underline;
+    text-decoration-color: #3b82f6; /* Azul Tailwind (blue-500) */
+}
+
+/* Efecto de carga (opcional) */
+.hover\:scale-105:hover {
+    transform: scale(1.05); /* Aumentar el tamaño ligeramente al pasar el mouse */
+}
+
+/* Controlar el retraso del efecto de subrayado */
+.transition-all {
+    transition-property: all;
+    transition-duration: 300ms;
+    transition-delay: 100ms; /* Retraso de 100ms en el hover */
+}
+/* En tu archivo CSS */
+.hover\:underline-blue-500:hover {
+    text-decoration: underline;
+    text-decoration-color: #3b82f6; /* Azul Tailwind (blue-500) */
+}
+

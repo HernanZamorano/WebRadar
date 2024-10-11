@@ -1,0 +1,24 @@
+.logo-card img {
+    max-width: 100%;
+  }
+  
+  .sidebar-menu {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .menu-item {
+    background-color: #1890ff;
+    color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    text-align: left;
+  }
+  
+  .menu-item:hover {
+    background-color: #40a9ff;
+    cursor: pointer;
+  }
+  
