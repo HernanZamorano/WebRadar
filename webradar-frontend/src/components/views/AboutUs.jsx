@@ -36,7 +36,7 @@ function AboutUs() {
         <div className="flex space-x-4">
           <button
             className="text-gray-800 px-4 py-2"
-            href="http://localhost:5200/app/"
+            onClick={() => navigate("/app/")}
           >
             Pagina Principal
           </button>
