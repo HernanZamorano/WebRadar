@@ -15,69 +15,9 @@ function AboutUs() {
   return (
     <div className="min-h-screen flex flex-col font-poppins">
       <Header /> {/* Usar el nuevo componente Header */}
-      <section className="flex flex-col md:flex-row p-8 bg-gray-100 text-gray-800">
-        {/* Espacio lateral izquierdo */}
-        <div className="hidden md:flex flex-col items-center w-1/4 p-20 space-y-4 mb-40 mt-10">
-          <div className="text-center">
-            <img
-              src="/app/foto-felipe.png"
-              alt="Felipe Coliman"
-              style={{
-                width: "250px", // Define el ancho
-                height: "250px", // Define la altura
-                borderRadius: "10px", // Bordes redondeados
-                objectFit: "cover", // Mantiene la proporción de la imagen
-              }}
-            />
-            <p className="text-xl font-semibold mt-2">Felipe Coliman</p>
-            <p>
-              <a
-                href="https://www.linkedin.com/in/felipe-coliman-c/"
-                className="text-blue-500"
-              >
-                LinkedIn
-              </a>
-            </p>
-            <p>
-              <a href="https://github.com/Yazpherr" className="text-blue-500">
-                GitHub
-              </a>
-            </p>
-          </div>
-
-          <div className="text-center">
-            <img
-              src="/app/foto-alan.jpg"
-              alt="Alan Molina"
-              style={{
-                width: "250px", // Define el ancho
-                height: "250px", // Define la altura
-                borderRadius: "10px", // Bordes redondeados
-                objectFit: "cover", // Mantiene la proporción de la imagen
-              }}
-            />
-            <p className="text-xl font-semibold mt-2">Alan Molina</p>
-            <p>
-              <a
-                href="https://www.linkedin.com/in/alan-eduard-molina-hidalgo-122822289/"
-                className="text-blue-500"
-              >
-                LinkedIn
-              </a>
-            </p>
-            <p>
-              <a
-                href="https://github.com/alanEmolina"
-                className="text-blue-500"
-              >
-                GitHub
-              </a>
-            </p>
-          </div>
-        </div>
-
+      <section className="flex flex-col p-8 bg-gray-100 text-gray-800 items-center">
         {/* Contenido principal */}
-        <div className="md:w-2/4 p-4 space-y-6">
+        <div className="p-4 space-y-6 max-w-3xl"> {/* Limitar el ancho del contenido */}
           <h1
             className="text-4xl font-bold mb-4"
             data-aos="fade-up"
@@ -185,83 +125,131 @@ function AboutUs() {
           </p>
         </div>
 
-        {/* Espacio lateral derecho */}
-        <div className="hidden md:flex flex-col items-center w-1/4 p-20 space-y-4 mb-40 mt-10">
-          <div className="text-center">
-            <img
-              src="/app/foto-hernan.jpg"
-              alt="Hernan Zamorano"
-              style={{
-                width: "250px", // Define el ancho
-                height: "250px", // Define la altura
-                borderRadius: "10px", // Bordes redondeados
-                objectFit: "cover", // Mantiene la proporción de la imagen
-              }}
-            />
-            <p className="text-xl font-semibold mt-2">Hernán Zamorano</p>
-            <p>
-              <a
-                href="https://www.linkedin.com/in/hernan-zamorano-b104b4294/"
-                className="text-blue-500"
-              >
-                LinkedIn
-              </a>
-            </p>
-            <p>
-              <a
-                href="https://github.com/HernanZamorano"
-                className="text-blue-500"
-              >
-                GitHub
-              </a>
-            </p>
-          </div>
+        {/* Sección con imágenes de los integrantes */}
+        <div className="w-full p-4 space-y-6 max-w-4xl">
+          <h4
+            className="text-4xl font-bold mb-4 text-center"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="200"
+          >
+            Nuestro Equipo
+          </h4>
+          <div className="flex flex-wrap justify-center space-x-8 mt-4">
+            <div className="text-center">
+              <img
+                src="/app/foto-felipe.png"
+                alt="Felipe Coliman"
+                style={{
+                  width: "150px", // Define el ancho
+                  height: "150px", // Define la altura
+                  borderRadius: "10px", // Bordes redondeados
+                  objectFit: "cover", // Mantiene la proporción de la imagen
+                }}
+              />
+              <p className="text-xl font-semibold mt-2">Felipe Coliman</p>
+              <p>
+                <a
+                  href="https://www.linkedin.com/in/felipe-coliman-c/"
+                  className="text-blue-500"
+                >
+                  LinkedIn
+                </a>
+              </p>
+              <p>
+                <a href="https://github.com/Yazpherr" className="text-blue-500">
+                  GitHub
+                </a>
+              </p>
+            </div>
 
-          <div className="text-center">
-            <img
-              src="/app/foto-christian.jpg"
-              alt="Christian Torres"
-              style={{
-                width: "250px", // Define el ancho
-                height: "250px", // Define la altura
-                borderRadius: "10px", // Bordes redondeados
-                objectFit: "cover", // Mantiene la proporción de la imagen
-              }}
-            />
-            <p className="text-xl font-semibold mt-2">Christian Torres</p>
-            <p>
-              <a
-                href="https://www.linkedin.com/in/christian-torres-kalasic/"
-                className="text-blue-500"
-              >
-                LinkedIn
-              </a>
-            </p>
-            <p>
-              <a
-                href="https://github.com/ChristkUOH01"
-                className="text-blue-500"
-              >
-                GitHub
-              </a>
-            </p>
-          </div>
+            <div className="text-center">
+              <img
+                src="/app/foto-alan.jpg"
+                alt="Alan Molina"
+                style={{
+                  width: "150px", // Define el ancho
+                  height: "150px", // Define la altura
+                  borderRadius: "10px", // Bordes redondeados
+                  objectFit: "cover", // Mantiene la proporción de la imagen
+                }}
+              />
+              <p className="text-xl font-semibold mt-2">Alan Molina</p>
+              <p>
+                <a
+                  href="https://www.linkedin.com/in/alan-eduard-molina-hidalgo-122822289/"
+                  className="text-blue-500"
+                >
+                  LinkedIn
+                </a>
+              </p>
+              <p>
+                <a href="https://github.com/alanEmolina" className="text-blue-500">
+                  GitHub
+                </a>
+              </p>
+            </div>
 
-          {/* Agregar más contenido como imágenes y texto */}
+            <div className="text-center">
+              <img
+                src="/app/foto-hernan.jpg"
+                alt="Hernan Zamorano"
+                style={{
+                  width: "150px", // Define el ancho
+                  height: "150px", // Define la altura
+                  borderRadius: "10px", // Bordes redondeados
+                  objectFit: "cover", // Mantiene la proporción de la imagen
+                }}
+              />
+              <p className="text-xl font-semibold mt-2">Hernán Zamorano</p>
+              <p>
+                <a
+                  href="https://www.linkedin.com/in/hernan-zamorano-b104b4294/"
+                  className="text-blue-500"
+                >
+                  LinkedIn
+                </a>
+              </p>
+              <p>
+                <a href="https://github.com/HernanZamorano" className="text-blue-500">
+                  GitHub
+                </a>
+              </p>
+            </div>
+
+            <div className="text-center">
+              <img
+                src="/app/foto-christian.jpg"
+                alt="Christian Torres"
+                style={{
+                  width: "150px", // Define el ancho
+                  height: "150px", // Define la altura
+                  borderRadius: "10px", // Bordes redondeados
+                  objectFit: "cover", // Mantiene la proporción de la imagen
+                }}
+              />
+              <p className="text-xl font-semibold mt-2">Christian Torres</p>
+              <p>
+                <a
+                  href="https://www.linkedin.com/in/christian-torres-c/"
+                  className="text-blue-500"
+                >
+                  LinkedIn
+                </a>
+              </p>
+              <p>
+                <a href="https://github.com/ChrisTCode" className="text-blue-500">
+                  GitHub
+                </a>
+              </p>
+            </div>
+          </div>
         </div>
       </section>
       <footer className="flex flex-col md:flex-row justify-center bg-blue-700 p-6">
         <div className="flex flex-wrap justify-center items-center gap-6 mx-auto">
-          <a
-            href="https://www.uoh.cl"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="/app/uoh.png"
-              alt="UOH Logo"
-              className="max-w-full h-auto md:w-32"
-            />
+          <a href="https://www.uoh.cl" target="_blank" rel="noopener noreferrer">
+            <img src="/app/uoh.png" alt="UOH Logo" className="max-w-full h-auto md:w-32" />
           </a>
           <img
             src="/app/Logo-escuela-ing.svg"
