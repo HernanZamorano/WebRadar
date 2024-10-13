@@ -13,11 +13,11 @@ function Header() {
     <header className="relative border-b border-gray-300 w-full p-4 flex justify-between items-center z-10">
       <div className="flex items-center">
         <img
-          src="/app/logo-ico.png"
+          src="/app/uohlogo.png"
           alt="AlphaNova Logo"
           className="h-10 w-auto pl-4"
         />
-        <p className="text-blue-800 text-2xl font-bold">AlphaNova</p>
+        <p className="text-blue-800 text-2xl font-bold"></p>
       </div>
 
       {/* Icono de hamburguesa para pantallas pequeñas */}
