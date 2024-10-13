@@ -16,16 +16,21 @@ function LandingPage() {
       duration: 1000,
       delay: 200,
     });
+
+    // Esto es para reiniciar AOS cada vez que se monta el componente
+    AOS.refresh();
+
+    return () => {
+      // Puedes limpiar si es necesario
+    };
   }, []);
 
   return (
     <div className="min-h-screen flex flex-col bg-white font-poppins">
-      {" "}
-      {/* Aplicar Poppins aquí */}
       <Header />
       {/* SECCION 1 HERO */}
       <section className="relative flex flex-col md:flex-row items-center justify-center md:justify-between text-center py-16 px-8 bg-transparent mx-auto h-1/2">
-        <div className="flex flex-col items-center  md:w-1/2">
+        <div className="flex flex-col items-center md:w-1/2">
           <h1
             className="text-4xl md:text-6xl font-bold"
             data-aos="fade-up"
@@ -38,14 +43,15 @@ function LandingPage() {
         </div>
 
         <div className="w-full md:w-1/2 flex justify-center mt-4 md:mt-0">
-          <img  
+          <img
             src="/app/radar.webp"
             alt="Radar"
             className="w-full h-auto rounded-lg shadow-lg max-w-xs md:max-w-lg"
           />
         </div>
       </section>
-      {/* SECCION 2 TERXTO DE INTRODUCCION - CARRUSEL */}
+
+      {/* SECCION 2 TEXTO DE INTRODUCCION - CARRUSEL */}
       <section className="flex flex-col md:flex-row items-center p-8 bg-gray-100 text-gray-800 max-w-screen-3xl justify-center">
         {/* Carrusel de Imágenes */}
         <div className="md:w-1/3">
@@ -55,8 +61,8 @@ function LandingPage() {
             speed={1000}
             slidesToShow={1}
             slidesToScroll={1}
-            autoplay={true} // Cambia automáticamente
-            autoplaySpeed={4000} // Cambia cada 3 segundos
+            autoplay={true}
+            autoplaySpeed={4000}
           >
             <div>
               <img
@@ -96,7 +102,7 @@ function LandingPage() {
           </Slider>
         </div>
 
-        <div className="max-w-screen-2xl mt-8 px-12 py-8 md:w-1/2 ">
+        <div className="max-w-screen-2xl mt-8 px-4 md:px-12 py-8 md:w-1/2">
           <h2 className="text-3xl font-bold mb-4 text-center md:text-left">
             Moderno Radar Perfilador
           </h2>
@@ -113,6 +119,7 @@ function LandingPage() {
           </p>
         </div>
       </section>
+
       {/* SECCION 3 - CARTA ENLACE RAUL VALENZUELA */}
       <section>
         <div className="flex flex-col lg:flex-row items-center justify-center mt-8 bg-white shadow-lg rounded-lg max-w-screen-2xl mx-auto p-10">
@@ -139,12 +146,11 @@ function LandingPage() {
               >
                 Raúl Valenzuela
               </a>
-              <LinkIcon className="text-blue-600 w-6 h-6" />{" "}
-              {/* Icono al lado del nombre */}
+              <LinkIcon className="text-blue-600 w-6 h-6" />
             </div>
             <p className="text-gray-700 text-justify w-8/12">
               Profesor de la Universidad de O'Higgins (UOH), Rancagua, Chile e
-              Investigador Adjunto del Centro de Investigación en Clima y 
+              Investigador Adjunto del Centro de Investigación en Clima y
               Resiliencia (CR2). Sus intereses incluyen procesos de
               precipitación asociados a Ríos Atmosféricos, pronósticos de
               precipitación y meteorología GPS.
@@ -172,10 +178,11 @@ function LandingPage() {
           </div>
         </div>
       </section>
+
       {/* SECCION 4 - DE QUE SE TRATA EL PERFILADOR RADAR  */}
       <section>
         <div
-          className="mt-8 px-12 py-8 max-w-screen-2xl justify-center mx-auto"
+          className="mt-8 px-4 md:px-12 py-8 max-w-screen-2xl justify-center mx-auto"
           data-aos="fade-up"
           data-aos-duration="1000"
           data-aos-delay="200"
@@ -207,12 +214,14 @@ function LandingPage() {
           <p className="text-lg mb-4 text-justify">
             Para hacer una comparación, el académico explica que un pluviómetro
             solo mide la precipitación en superficie y la frecuencia máxima
-            normalmente ronda los 5 minutos, “es decir, con un pluviómetro cada
-            5 minutos tenemos una medición, con el MRR medimos 15 veces más
-            rápido”, puntualiza.
+            normalmente ronda los 5 minutos, “es decir, con un pluviómetro no
+            puedes observar si llueve mucho o poco, pero de forma intermitente,
+            en cambio el radar observa lo que está ocurriendo a cada instante”.
           </p>
         </div>
       </section>
+
+      {/* SECCION 5 FOOTER */}
       <Footer />
     </div>
   );

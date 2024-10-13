@@ -66,11 +66,11 @@ function ImageCard() {
       <div
         className="bg-white rounded-lg shadow-lg w-full content-container"
         style={{
-          margin: '10px',
+          margin: '0px',
           height: 'calc(100vh - 40px)',
           display: 'flex',
           flexDirection: 'column',
-          padding: '10px',
+          padding: '-10px',
         }}
       >
         <h2 className="text-xl font-bold mb-2 text-center">Historico MRR</h2>

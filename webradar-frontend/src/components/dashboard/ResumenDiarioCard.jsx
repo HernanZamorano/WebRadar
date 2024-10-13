@@ -1,8 +1,9 @@
 import React from 'react';
-import Calendar from 'react-calendar';
-import 'react-calendar/dist/Calendar.css';
-import { Table } from 'antd';
+import { Select, Form, Button, ConfigProvider, Row, Col } from 'antd';
+import esES from 'antd/es/locale/es_ES';
 import Plot from 'react-plotly.js';
+
+const { Option } = Select;
 
 const GraficoInteractivo = () => {
   const [graphData, setGraphData] = React.useState(null);
@@ -46,52 +47,82 @@ const GraficoInteractivo = () => {
     <Plot
       data={graphData}
       layout={layout}
-      style={{ width: "100%", height: "calc(100% + 100px)" }}
+      style={{ width: "100%", height: "100%" }}
     />
   );
 };
 
 function ImageCard() {
-  // Datos de ejemplo para la tabla de Ant Design
-  const columns = [
-    { title: 'Name', dataIndex: 'name', key: 'name' },
-    { title: 'Age', dataIndex: 'age', key: 'age' },
-    { title: 'Address', dataIndex: 'address', key: 'address' },
-  ];
+  const [filtroTipo, setFiltroTipo] = React.useState(null);
+  const [altura, setAltura] = React.useState(null);
 
-  const data = [
-    { key: '1', name: 'John Brown', age: 32, address: 'New York No. 1 Lake Park' },
-    { key: '2', name: 'Jim Green', age: 42, address: 'London No. 1 Lake Park' },
-    { key: '3', name: 'Joe Black', age: 32, address: 'Sidney No. 1 Lake Park' },
-  ];
+  const handleFilter = () => {
+    console.log('Filtros aplicados:', { filtroTipo, altura });
+  };
 
   return (
-    <div
-      className="bg-white rounded-lg shadow-lg w-full content-container"
-      style={{
-        margin: '10px',
-        height: 'calc(100vh - 40px)', // Ajustar la altura total al alto de la pantalla
-        display: 'flex',
-        flexDirection: 'column',
-        padding: '10px', // Padding para evitar que el contenido se desborde
-      }}
-    >
-      <h2 className="text-xl font-bold mb-2 text-center">Gráfico Interactivo En construccion </h2>
-      <div style={{ flex: '1', display: 'flex', flexDirection: 'column' }}>
-        <div style={{ overflowX: 'auto', whiteSpace: 'nowrap', flex: '1' }}>
-          <GraficoInteractivo /> {/* Aquí se muestra el gráfico */}
-        </div>
-        <div className="calendar-table-container" style={{ flex: '1', display: 'flex', borderTop: '1px solid #ddd', padding: '10px', flexWrap: 'wrap' }}>
-          <div className="calendar-container" style={{ flex: '1', padding: '0 10px', overflow: 'auto', maxHeight: '300px' }}>
-            <Calendar />
+    <ConfigProvider locale={esES}>
+      <div
+        className="bg-white rounded-lg shadow-lg w-full content-container"
+        style={{
+          margin: '0px',
+          height: 'calc(100vh - 40px)',
+          display: 'flex',
+          flexDirection: 'column',
+          padding: '-10px',
+        }}
+      >
+        <h2 className="text-xl font-bold mb-2 text-center">Historico MRR</h2>
+        <div style={{ flex: '1', display: 'flex', flexDirection: 'column' }}>
+          <div style={{ overflowX: 'auto', flex: '1' }}>
+            <GraficoInteractivo /> {/* Aquí se muestra el gráfico */}
           </div>
+          <Row
+            style={{
+              flex: '0 0 auto',
+              marginTop: '10px',
+              justifyContent: 'center', // Centra horizontalmente
+              display: 'flex',          // Usar flexbox
+            }}
+          >
+            <Col xs={24} sm={12} style={{ padding: '0 10px', display: 'flex', justifyContent: 'center' }}>
+              <Form layout="vertical" onFinish={handleFilter} style={{ width: '100%' }}>
+                <Form.Item label="Variable" required>
+                  <Select
+                    value={filtroTipo}
+                    onChange={setFiltroTipo}
+                    placeholder="Seleccionar tipo de filtro"
+                    style={{ width: '100%' }}
+                  >
+                    <Option value="dbz">DBZ</Option>
+                    <Option value="velocidad">Velocidad Vertical</Option>
+                    <Option value="spectrum">Ancho del Espectro</Option>
+                  </Select>
+                </Form.Item>
 
-          <div className="table-container" style={{ flex: '1', padding: '0 10px', overflow: 'auto', maxHeight: '300px' }}>
-            <Table columns={columns} dataSource={data} pagination={false} />
-          </div>
+                <Form.Item label="Altura (m)">
+                  <Select
+                    value={altura}
+                    onChange={setAltura}
+                    placeholder="Seleccionar altura"
+                    style={{ width: '100%' }}
+                  >
+                    <Option value="100">100</Option>
+                    <Option value="250">250</Option>
+                  </Select>
+                </Form.Item>
+
+                <Form.Item>
+                  <Button type="primary" htmlType="submit" style={{ width: '100%' }}>
+                    Filtrar
+                  </Button>
+                </Form.Item>
+              </Form>
+            </Col>
+          </Row>
         </div>
       </div>
-    </div>
+    </ConfigProvider>
   );
 }
 

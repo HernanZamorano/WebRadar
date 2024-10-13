@@ -23,7 +23,7 @@ function HamburgerSidebar() {
 
   return (
     <>
-      <Button type="primary" onClick={showDrawer} icon={<MenuOutlined />} className="lg:hidden" />
+      <Button type="Secundary" onClick={showDrawer} icon={<MenuOutlined />} className="lg:hidden" />
       <Drawer
         title="Menu"
         placement="left"

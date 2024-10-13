@@ -23,19 +23,19 @@ function Dashboard() {
   };
 
   return (
-    <Layout style={{ minHeight: "100vh" }}>
+    <Layout style={{ minHeight: "110vh" }}>
       {/* Large sidebar para pantallas grandes */}
       <LargeSidebar selectedMenu={selectedMenu} setSelectedMenu={setSelectedMenu} />
-
-      {/* Hamburger sidebar para pantallas pequeñas y medianas */}
-      <HamburgerSidebar setSelectedMenu={setSelectedMenu} />
-
+      
+      
       {/* Main content */}
       <Layout>
         <Content
           style={{ margin: "10px", padding: "0", backgroundColor: "#f0f2f5" }}
         >
           <div className="w-full">
+            {/* Hamburger sidebar para pantallas pequeñas y medianas */}
+            <HamburgerSidebar setSelectedMenu={setSelectedMenu} />
             {renderContent()} {/* Renderiza la carta correspondiente */}
           </div>
         </Content>
